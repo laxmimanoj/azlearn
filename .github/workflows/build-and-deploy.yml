@@ -37,7 +37,7 @@ jobs:
         working-directory: ./src/azlearn-app
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/azlearn-app
         working-directory: ./src/azlearn-app
 
       - name: upload artifact
@@ -50,7 +50,7 @@ jobs:
     runs-on: windows-latest
     needs: build
     environment:
-      name: 'Azure_prod'
+      name: 'prod'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
