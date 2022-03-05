@@ -1,0 +1,31 @@
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Build
+      run: dotnet build
+      working-directory: ./src/azlearn-app
+    - name: Publish
+      run: dotnet publish -c Release -o pub
+      working-directory: ./src/azlearn-app
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.2
+      with:
+        name: pub
+        path: ./src/azlearn-app/pub/**
+        if-no-files-found: error
