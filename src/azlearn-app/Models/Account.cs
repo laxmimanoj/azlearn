@@ -11,6 +11,5 @@ namespace azlearn_app.Models{
         regularira = 3,
         rothira = 4,
         smallbusiness = 5
-    
     }
 }
