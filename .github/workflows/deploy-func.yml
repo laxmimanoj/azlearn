@@ -9,7 +9,7 @@ on:
 
 env:
   AZURE_FUNCTIONAPP_NAME: func-azlearn-func-prod-scus-01
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: './src/azlearn-func'
   DOTNET_VERSION: '6.0.x'
 
 jobs:
