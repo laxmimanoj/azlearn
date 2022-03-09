@@ -34,9 +34,11 @@ jobs:
 
       - name: dotnet build
         run: dotnet build --configuration Release
+        working-directory: ./src/azlearn-app
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/azlearn-app
+        working-directory: ./src/azlearn-app
 
       - name: upload artifact
         uses: actions/upload-artifact@v2
