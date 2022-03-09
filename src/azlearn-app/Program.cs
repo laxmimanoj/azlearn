@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddAzureClients(az => {
-    az.AddServiceBusClient(builder.Configuration["AzureServiceBusConnectionString"])
+    az.AddServiceBusClient(builder.Configuration.GetConnectionString("AzureServiceBus"))
     .WithName("sb-azlearn")
     .ConfigureOptions(opt=>{
         opt.RetryOptions=new ServiceBusRetryOptions{
