@@ -1,4 +1,4 @@
-name: build and deploy
+name: deploy-app
 
 env:
   AZURE_WEBAPP_NAME: app-azlearn-app-prod-scus-01
