@@ -2,7 +2,7 @@ name: deploy-app
 
 env:
   AZURE_WEBAPP_NAME: app-azlearn-app-prod-scus-01
-  AZURE_WEBAPP_PACKAGE_PATH: './src/azlearn-app' 
+  AZURE_WEBAPP_PACKAGE_PATH: '.' 
   DOTNET_VERSION: '6.0.x'
 
 on:
