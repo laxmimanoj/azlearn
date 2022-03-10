@@ -8,7 +8,7 @@ namespace AzLearn.Func
     public static class ServiceBusQueueTriggerAzlearn1
     {
         [FunctionName("ServiceBusQueueTriggerAzlearn1")]
-        public static void Run([ServiceBusTrigger("sbq-azlearn-prod-01")]string myQueueItem, 
+        public static void Run([ServiceBusTrigger("sbq-azlearn-prod-01", Connection = "AzureWebJobsServiceBus")]string myQueueItem, 
         int deliveryCount,
         DateTime enqueuedTimeUtc,
         string messageId,
